@@ -24,8 +24,6 @@ function game() {
         } else {
             //if rock, paper, or scissors isn't chosen, tell player to correct their choice
             console.log("please choose rock, paper, or scissors");
-            //call function to get player choice again
-            getPlayerChoice();
         }
     }
 
@@ -37,9 +35,12 @@ function game() {
         if ((playerSelection === "rock" && computerSelection === "rock") ||
             (playerSelection === "paper" && computerSelection === "paper") ||
             (playerSelection === "scissors" && computerSelection === "scissors")) {
-            //let player know it's a tie, and replay the round
-            console.log("It's a tie! Try again.");
-            //return result = "It's a tie! Try again.";
+            //move onto next round, let player know it's a tie
+            console.log(`Round: ${roundNumber++};
+                        Player Chose: ${playerSelection} - Player Score: ${playerWin};
+                        Computer Chose: ${computerSelection} - Computer Score: ${computerWin};
+                        It's a tie!`);
+            //return (roundNumber, playerWin, result = "It's a tie!");
         }  
         //if player wins round
         if ((playerSelection === "rock" && computerSelection === "scissors") ||
@@ -50,7 +51,7 @@ function game() {
                         Player Chose: ${playerSelection} - Player Score: ${++playerWin};
                         Computer Chose: ${computerSelection} - Computer Score: ${computerWin};
                         You win!`);
-            //return (roundNumber++, playerWin++, result = "You win!");
+            //return (roundNumber++, ++playerWin, result = "You win!");
         }
         //if player loses round
         if ((playerSelection === "rock" && computerSelection === "paper") ||
@@ -61,7 +62,7 @@ function game() {
                         Player Chose: ${playerSelection} - Player Score: ${playerWin};
                         Computer Chose: ${computerSelection} - Computer Score: ${++computerWin};
                         You lose!`);
-            //return (roundNumber++, computerWin++, result = "You lose!");
+            //return (roundNumber++, ++computerWin, result = "You lose!");
         }
     }
 
@@ -73,11 +74,11 @@ function game() {
     playRound(getPlayerChoice(), computerPlay()); //round 5
 
     //announce winner at the end of 5 rounds (for a best of 5)
-    if (playerWin >= 3) {
+    if (playerWin > computerWin) {
         //let player know they won
         console.log("Congratulations! You've beaten the Computer!");
         //return "Congratulations! You've beaten the Computer!";
-    } else if (computerWin >= 3) {
+    } else if (computerWin > playerWin) {
         //let player know they lost
         console.log("Sad Panda! The Computer has bested you!");
         //return "Sad Panda! The Computer has bested you!";
