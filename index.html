@@ -5,15 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="./script.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <h2>The first to 5 wins is the victor</h2>
-    <h3>Player <span id="playerScore">0</span> VS <span id="computerScore">0</span> Computer</h3>
-    <p>Choose your move by clicking a button below:</p>
-    <button class="choices">rock</button>
-    <button class="choices">paper</button>
-    <button class="choices">scissors</button>
+    <div class="main-container">
+        <h1>Rock Paper Scissors</h1>
+        <h2>Claim Victory by besting the Computer 5 times</h2>
+        <div class="show-chosen">
+            <div>
+                <div class="chosen">
+                    <img id="playerMove" src="./img/person.svg" />
+                </div>
+                <h4>Player Score</h4>
+                <h2 id="playerScore">0</h2>
+            </div>
+            <img class="versus" src="./img/vs.svg" />
+            <div>
+                <div class="chosen">
+                    <img id="computerMove" src="./img/computer.svg" />
+                </div>
+                <h4>Computer Score</h4>
+                <h2 id="computerScore">0</h2>
+            </div>
+        </div>
+        <div class="round-result">
+            <p id="displayResult">Choose your weapon!</p>
+        </div>
+        <div class="action">
+            <input class="choices" type="image" src="./img/rock.svg" value="rock" />
+            <input class="choices" type="image" src="./img/paper.svg" value="paper" />
+            <input class="choices" type="image" src="./img/scissors.svg" value="scissors" />
+        </div>
+        <div class="links">
+            <span>Icons: <a href="https://thenounproject.com/cristiano.zoucas/">Cristiano Zoucas</a></span>
+        </div>
+    </div>
 </body>
 </html>

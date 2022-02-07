@@ -33,3 +33,5 @@
     <li>Using event listeners to get inputs from a user</li>
     <li>Refactoring code</li>
 </ul>
+
+<em>Images from the <a href="https://thenounproject.com/cristiano.zoucas/">Cristiano Zoucas at the Noun Project</a></em>

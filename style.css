@@ -1,0 +1,73 @@
+body {
+    text-align: center;
+    background-color: #111720;
+}
+
+img {
+    max-width: 100px;
+}
+
+input:hover {
+    box-shadow: 0 0 1rem #ffc600;
+}
+
+a:visited {
+    color:bisque;
+}
+
+.main-container {
+    margin: 0 auto;
+    background-color: rgba(100, 100, 100, 0.8);
+    border-radius: 50px;
+    padding: 25px 50px;
+    width: 70vw;
+    max-width: 800px;
+}
+
+.show-chosen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.chosen, .choices {
+    border-radius: 50%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 1);
+    width: 100%;
+    max-width: 100px;
+    flex: 1 1 30%;
+    padding: 10px;
+    animation-name: anim-fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.versus {
+    width: 10em;
+}
+
+.round-result {
+    max-width: 300px;
+    padding: 5px 0;
+    margin: 0 auto;
+    color:bisque;
+}
+
+.action {
+    max-width: 800px;
+    padding: 40px 0;
+    margin: 0 auto;
+    background-color: rgba(107, 7, 7, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 50px;
+}
+
+.links {
+    max-width: 800px;
+}
