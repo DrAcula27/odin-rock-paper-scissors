@@ -1,16 +1,13 @@
-//script plays a game of rock, paper, scissors where a player plays the computer
-
-//initialize scores to 0
+//initializations
 let playerScore = 0;
 let computerScore = 0;
 let roundNumber = 1;
-
-//get player input by listening for button click
 const choices = document.querySelectorAll(".choices");
 
-//main game function
+//for each choice the player makes,
 choices.forEach((choice) => {
     choice.addEventListener("click", function () {
+        //identify player choice
         playerSelection = this.value;
 
         //generate computer input
@@ -26,19 +23,18 @@ choices.forEach((choice) => {
         //update score in browser
         updateScore();
 
-        //check for a winner, and reset game if there is one
-        if (checkWinner()) {
-            playerScore = computerScore = 0;
-            updateScore();
-            document.getElementById("playerMove").src = `./img/person.svg`;
-            document.getElementById("computerMove").src = `./img/computer.svg`;
-            document.getElementById("displayResult").textContent = "Choose your weapon!";
-            roundNumber = 1;
-        }
+        //check for a winner
+        checkWinner();
     });
 });
 
-//function that plays a single round of Rock Paper Scissors
+//update the moves in the browser
+function updateMoves(playerSelection, computerSelection) {
+    document.getElementById("playerMove").src = `./img/${playerSelection}.svg`;
+    document.getElementById("computerMove").src = `./img/${computerSelection}.svg`;
+}
+
+//play a single round of Rock Paper Scissors
 function playRound (playerSelection, computerSelection) {
     //if the round is a tie
     if (playerSelection === computerSelection) {
@@ -63,27 +59,44 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-//function that updates the moves in the browser
-function updateMoves(playerSelection, computerSelection) {
-    document.getElementById("playerMove").src = `./img/${playerSelection}.svg`;
-    document.getElementById("computerMove").src = `./img/${computerSelection}.svg`;
-}
-
-//function that updates the score in the browser
+//update the score in the browser
 function updateScore() {
     document.getElementById("playerScore").textContent = playerScore;
     document.getElementById("computerScore").textContent = computerScore;
 }
 
-//function that checks for a winner once either player or computer wins 5 rounds
+//check for a winner once either player or computer wins 5 rounds
 function checkWinner() {
-    if (playerScore === 5) {
-        alert("Congratulations! You've beaten the Computer!");
-        return true;
-    } else if (computerScore === 5) {
-        alert("The Computer has bested you!");
-        return true;
-    } else {
-        return false;
+    if (playerScore === 5 || computerScore === 5) {
+        openEndGameModal();
+        displayEndGameMessage();
+        restartGame();
     }
+}
+
+//end of game modal initializations
+const endGameModal = document.getElementById("endGameModal");
+const endGameModalTitle = document.getElementById("endGameModalTitle");
+const modalOverlay = document.getElementById("modalOverlay");
+const restartButton = document.getElementById("restartButton");
+
+
+//pop open the modal with overlay
+function openEndGameModal() {
+    endGameModal.classList.add("active");
+    modalOverlay.classList.add("active");
+}
+
+//populate modal title
+function displayEndGameMessage() {
+    return playerScore > computerScore
+    ? (endGameModalTitle.textContent = `Congratulations! After ${roundNumber} rounds, you've won!`)
+    : (endGameModalTitle.textContent = `After ${roundNumber} rounds, the computer has bested you...`);
+}
+
+//restart the game
+function restartGame() {
+    restartButton.addEventListener("click", () => {
+        window.location.reload();
+    });
 }

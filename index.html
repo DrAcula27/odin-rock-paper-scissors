@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="./script.js" defer></script>
 </head>
 <body>
-    <div class="main-container">
+    <header class="header">
         <h1>Rock Paper Scissors</h1>
-        <h2>Claim Victory by besting the Computer 5 times</h2>
+    </header>
+    <main class="main-container">
+        <h2>The first to 5 points wins!</h2>
         <div class="show-chosen">
             <div>
                 <div class="chosen">
@@ -20,7 +22,7 @@
                 <h4>Player Score</h4>
                 <h2 id="playerScore">0</h2>
             </div>
-            <img class="versus" src="./img/vs.svg" />
+            <img src="./img/vs.svg" />
             <div>
                 <div class="chosen">
                     <img id="computerMove" src="./img/computer.svg" />
@@ -37,9 +39,16 @@
             <input class="choices" type="image" src="./img/paper.svg" value="paper" />
             <input class="choices" type="image" src="./img/scissors.svg" value="scissors" />
         </div>
-        <div class="links">
-            <span>Icons: <a href="https://thenounproject.com/cristiano.zoucas/">Cristiano Zoucas</a></span>
-        </div>
+    </main>
+    <footer class="footer">
+        <p>Created by
+            <a href="https://github.com/DrAcula27" target="_blank">DrAcula27</a>
+        </p>
+    </footer>
+    <div class="end-game-modal" id="endGameModal">
+        <p class="end-game-modal-title" id="endGameModalTitle"></p>
+        <button class="restart-button" id="restartButton">Play Again</button>
     </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
 </body>
 </html>

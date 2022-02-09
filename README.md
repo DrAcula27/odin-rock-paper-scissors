@@ -34,4 +34,4 @@
     <li>Refactoring code</li>
 </ul>
 
-<em>Images from the <a href="https://thenounproject.com/cristiano.zoucas/">Cristiano Zoucas at the Noun Project</a></em>
+<em>Images from the <a href="https://www.svgrepo.com">svgrepo</a></em>
