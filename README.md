@@ -3,7 +3,7 @@
 <strong>The Odin Project - Foundations - JavaScript Basics - Project: Rock, Paper, Scissors</strong>
 
 <p>The goal of this project is to build on and cement my JavaScript skills and knowledge that I have gained while working through The Odin Project.</p>
-<p>I will be building a simple implementation of the classic "rock-paper-scissors" game from scratch using JavaScript.</p>
+<p>This project is a simple implementation of the classic "rock-paper-scissors" game from scratch using JavaScript.</p>
 <p>The first iteration of this game will be played soley within the console. I will revisit this project later in the JavaScript Foundations to add a GUI using HTML and CSS.</p>
 
 <strong>After completing this project, I have accomplished:</strong>
@@ -20,9 +20,9 @@
 <h1>UPDATE 1</h1>
 <strong>The Odin Project - Foundations - JavaScript Basics - Revisiting Rock, Paper, Scissors</strong>
 
-<p>The goal is to add a User Interface (UI) to the game, so that it is no longer played via the console.</p>
+<p>I have now added a User Interface (UI) to the game, so that it is no longer played via the console.</p>
 
-<strong>After completing this update, I will have accomplished:</strong>
+<strong>After completing this update, I have accomplished:</strong>
 <ul>
     <li>Learn how to create and manage branches in Git</li>
     <li>Understand what the DOM (Document Object Model) is in relation to a webpage</li>
